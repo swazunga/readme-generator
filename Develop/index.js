@@ -55,16 +55,5 @@ function init() {
   });
 }
 
-const generateContents = (toc) => {
-  toc = data.contents;
-  if (!toc) {
-    return "";
-  } else {
-    for (let i = 0; i < data.contents.length; i++) {
-      return `- ${data.contents[i]}`;
-    }
-  }
-};
-
 // Function call to initialize app
 init();
