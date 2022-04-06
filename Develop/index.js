@@ -23,7 +23,7 @@ const questions = [
     choices: [
       "Installation",
       "Usage",
-      "License",
+      "Licenses",
       "Contributing",
       "Tests",
       "Questions",
@@ -37,7 +37,7 @@ const questions = [
   {
     type: "input",
     name: "usage",
-    message: "What is the Usage for your project?",
+    message: "What is the usage for your project?",
   },
 ];
 
@@ -54,6 +54,17 @@ function init() {
     // Use user feedback for... whatever!!
   });
 }
+
+const generateContents = (toc) => {
+  toc = data.contents;
+  if (!toc) {
+    return "";
+  } else {
+    for (let i = 0; i < data.contents.length; i++) {
+      return `- ${data.contents[i]}`;
+    }
+  }
+};
 
 // Function call to initialize app
 init();
