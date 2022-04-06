@@ -17,9 +17,27 @@ const questions = [
     message: "What is the description of your project?",
   },
   {
-    type: "ipnut",
+    type: "checkbox",
     name: "contents",
     message: "What would you like to include in the table of contents?",
+    choices: [
+      "Installation",
+      "Usage",
+      "License",
+      "Contributing",
+      "Tests",
+      "Questions",
+    ],
+  },
+  {
+    type: "input",
+    name: "installation",
+    message: "How do you install your project?",
+  },
+  {
+    type: "input",
+    name: "usage",
+    message: "What is the Usage for your project?",
   },
 ];
 
