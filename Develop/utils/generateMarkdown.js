@@ -18,13 +18,15 @@ const generateContents = (toc) => {
   if (!toc) {
     return "";
   } else {
+    let formattedContent;
     for (let i = 0; i < toc.length; i++) {
-      let items = `- ${toc[i]}`;
-      console.log(items);
-      // listContents.add(items);
-
-      listContents.join(", ");
+      let items = `${toc[i]}`;
+      listContents.push(items);
+      formattedContent = listContents.map((content) => {
+        return `- [${content}] (#${content}))\n`;
+      });
     }
+    return formattedContent.join("");
   }
 };
 
