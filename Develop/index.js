@@ -3,6 +3,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
 const generateMarkdown = require("./utils/generateMarkdown");
+const renderLicenseBadge = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -38,6 +39,34 @@ const questions = [
     type: "input",
     name: "usage",
     message: "What is the usage for your project?",
+  },
+  {
+    type: "list",
+    name: "license",
+    message: "Do you have any of these licenses?",
+    choices: [
+      "Apache",
+      "Boost",
+      "BSD 3-Clause License",
+      "BSD 2-Clause License",
+      "MIT",
+      "None",
+    ],
+  },
+  {
+    type: "input",
+    name: "contribute",
+    message: "How would like others to contribute?",
+  },
+  {
+    type: "input",
+    name: "tests",
+    message: "How can others test this project?",
+  },
+  {
+    type: "input",
+    name: "questions",
+    message: "How would you like to direct questions?",
   },
 ];
 
