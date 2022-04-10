@@ -2,7 +2,12 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license === "Apache") {
-    return "image";
+    var image = new Image(100, 50);
+    Image.src = "./assets/Apache.svg";
+    return `${license}` + image;
+  }
+  if (license === "Boost") {
+    return;
   } else {
     console.log("this");
   }
@@ -19,10 +24,10 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (!license) {
+  if (license === "none") {
     return;
   } else if (license === "Apache") {
-    return renderLicenseBadge(license) + renderLicenseLink(license);
+    return renderLicenseBadge(license) + " " + renderLicenseLink(license);
   }
 }
 
@@ -30,7 +35,7 @@ function renderLicenseSection(license) {
 const listContents = [];
 
 const generateContents = (toc) => {
-  console.log(toc);
+  console.log(renderLicenseBadge("Apache"));
   if (!toc) {
     return "";
   } else {
@@ -51,13 +56,13 @@ function generateMarkdown(data) {
   ## Description
   ${data.description}
   ## Table of Contents
-${generateContents(data.contents)}
+  ${generateContents(data.contents)}
   ## Installation
   ${data.installation}
   ## Usage
   ${data.usage}
   ## License
-
+  This Project is protected by ${renderLicenseSection(data.license)}
   ## Contributions
   ${data.contribute}
   ## Testing
@@ -70,4 +75,3 @@ ${generateContents(data.contents)}
 }
 
 module.exports = generateMarkdown;
-module.exports = renderLicenseBadge;
