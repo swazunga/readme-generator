@@ -2,14 +2,21 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license === "Apache") {
-    var image = new Image(100, 50);
-    Image.src = "./assets/Apache.svg";
-    return `${license}` + image;
+    return "[![License: Apache](./assets/Apache.svg)](https://opensource.org/licenses/Apache-2.0)";
   }
   if (license === "Boost") {
-    return;
+    return "[![License: Boost](./assets/Boost.svg)](https://www.boost.org/LICENSE_1_0.txt)";
+  }
+  if (license === "BSD 3-Clause License") {
+    return "[![License: BSD 3-Clause License](./assets/BSD3.svg)](https://opensource.org/licenses/BSD-3-Clause)";
+  }
+  if (license === "BSD 2-Clause License") {
+    return "[![License: BSD 2-Clause License](./assets/BSD2.svg)](https://opensource.org/licenses/BSD-2-Clause)";
+  }
+  if (license === "MIT") {
+    return "[![License: MIT](./assets/MIT.svg)](https://opensource.org/licenses/MIT)";
   } else {
-    console.log("this");
+    return "no license";
   }
 }
 
@@ -19,6 +26,20 @@ function renderLicenseLink(license) {
   if (license === "Apache") {
     return "(https://opensource.org/licenses/Apache-2.0)";
   }
+  if (license === "Boost") {
+    return "(https://www.boost.org/LICENSE_1_0.txt)";
+  }
+  if (license === "BSD 3-Clause License") {
+    return "(https://opensource.org/licenses/BSD-3-Clause)";
+  }
+  if (license === "BSD 2-Clause License") {
+    return "(https://opensource.org/licenses/BSD-2-Clause)";
+  }
+  if (license === "MIT") {
+    return "(https://opensource.org/licenses/MIT)";
+  } else {
+    return "";
+  }
 }
 
 // TODO: Create a function that returns the license section of README
@@ -26,7 +47,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (license === "none") {
     return;
-  } else if (license === "Apache") {
+  } else {
     return renderLicenseBadge(license) + " " + renderLicenseLink(license);
   }
 }
@@ -35,7 +56,6 @@ function renderLicenseSection(license) {
 const listContents = [];
 
 const generateContents = (toc) => {
-  console.log(renderLicenseBadge("Apache"));
   if (!toc) {
     return "";
   } else {
@@ -51,6 +71,9 @@ const generateContents = (toc) => {
   }
 };
 
+const generateGithubLink = (username) => {
+  return `[${username}](https://github.com/${username})`;
+};
 function generateMarkdown(data) {
   return `# ${data.title} 
   ## Description
@@ -68,7 +91,9 @@ function generateMarkdown(data) {
   ## Testing
   ${data.tests}
   ## Questions
-  ${data.questions}
+  Plese direct questions to ${data.email}
+  or ${generateGithubLink(data.username)}
+
  
 
 `;
