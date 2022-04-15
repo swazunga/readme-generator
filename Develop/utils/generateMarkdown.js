@@ -80,19 +80,19 @@ function generateMarkdown(data) {
   ${data.description}
   ## Table of Contents
   ${generateContents(data.contents)}
-  ## Installation
-  ${data.installation}
-  ## Usage
-  ${data.usage}
-  ## License
-  This Project is protected by ${renderLicenseSection(data.license)}
-  ## Contributions
-  ${data.contribute}
-  ## Testing
-  ${data.tests}
-  ## Questions
-  Plese direct questions to ${data.email}
-  or ${generateGithubLink(data.username)}
+## Installation
+${data.installation}
+## Usage
+${data.usage}
+## License
+This Project is protected by ${renderLicenseSection(data.license)}
+## Contributions
+${data.contribute}
+## Testing
+${data.tests}
+## Questions
+Plese direct questions to ${data.email}
+or ${generateGithubLink(data.username)}
 
  
 
