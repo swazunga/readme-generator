@@ -1,6 +1,6 @@
-# asdf 
+# This Project X 
   ## Description
-  asdf
+  This project is a test project
   ## Table of Contents
   - [Installation](#installation)
 - [Usage](#usage)
@@ -10,18 +10,18 @@
 - [Questions](#questions)
 
 ## Installation
-asdf
+You install this way
 ## Usage
-asdf
+You use it this way
 ## License
 This Project is protected by [![License: Apache](./assets/Apache.svg)](https://opensource.org/licenses/Apache-2.0) (https://opensource.org/licenses/Apache-2.0)
 ## Contributions
-asdf
+Contribute by doing this
 ## Testing
-asf
+You can test it by testing
 ## Questions
-Plese direct questions to asdf
-or [asf](https://github.com/asf)
+Plese direct questions to michael@locumsmart.net
+or [swazunga](https://github.com/swazunga)
 
  
 

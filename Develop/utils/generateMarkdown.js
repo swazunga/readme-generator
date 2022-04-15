@@ -84,11 +84,11 @@ function generateMarkdown(data) {
 ${data.installation}
 ## Usage
 ${data.usage}
-## License
+## Licenses
 This Project is protected by ${renderLicenseSection(data.license)}
-## Contributions
+## Contributing
 ${data.contribute}
-## Testing
+## Tests
 ${data.tests}
 ## Questions
 Plese direct questions to ${data.email}
